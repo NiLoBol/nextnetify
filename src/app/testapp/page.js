@@ -7,12 +7,12 @@ const getTodo = async () => {
     });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch topics");
+      throw new Error("Failed to fetch todo");
     }
 
     return res.json();
   } catch (error) {
-    console.log("Error loading topics: ", error);
+    console.log("Error loading todo: ", error);
   }
 };
 
