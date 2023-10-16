@@ -13,15 +13,14 @@ async function page() {
   console.log(res);
   return (
     <div>
-      {res.Todos.map(data=>{
-        return(
-          <div className='flex flex-row gap-5 p-10 bg-yellow-200'>
-            <input type="checkbox" value={data.clickbox} />
-            <p className='text-center text-4xl'>{data.title}</p>
-          </div>
-        )
-      })}
-    </div>
+    {res.Todos.map((data, index) => (
+      <div key={index} className='flex flex-row gap-5 p-10 bg-yellow-200'>
+        <input type="checkbox" checked={data.clickbox} />
+        <p className='text-center text-4xl'>{data.title}</p>
+      </div>
+    ))}
+  </div>
+  
   )
 }
 
