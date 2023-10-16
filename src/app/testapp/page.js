@@ -4,13 +4,11 @@ async function page() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/todo`)
     .then((response) => response.json())
     .then((jsonData) => {
-      console.log(jsonData);
       return jsonData;
     })
     .catch((error) => {
       console.error("เกิดข้อผิดพลาดในการดึงข้อมูล:", error);
     });
-  console.log(res);
   return (
     <div>
       {res.Todos.map((data, index) => (
